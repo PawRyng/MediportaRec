@@ -1,4 +1,5 @@
 import { Table, TableBody, TableCell, TableRow, TableContainer, TableHead, Paper, Box, Skeleton } from '@mui/material';
+import { PropTypes } from 'prop-types';
 
 const SkeletonListing = ({perPage})=>{
     return(
@@ -12,7 +13,6 @@ const SkeletonListing = ({perPage})=>{
       my={4}
       mx="auto"
       >  
-       
        <Skeleton variant="rounded" width={210} height={60} />
         <TableContainer component={Paper}>
             <Table sx={{ maxWidth: 500 }} aria-label="simple table">
@@ -35,4 +35,9 @@ const SkeletonListing = ({perPage})=>{
         </Box>          
     )
 }
+
+SkeletonListing.propTypes = {
+  perPage: PropTypes.number
+}
+
 export default SkeletonListing
